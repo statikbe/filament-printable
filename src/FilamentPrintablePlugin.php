@@ -1,6 +1,6 @@
 <?php
 
-namespace ArielMejiaDev\FilamentPrintable;
+namespace Statik\FilamentPrintable;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
@@ -10,16 +10,6 @@ class FilamentPrintablePlugin implements Plugin
     public function getId(): string
     {
         return 'filament-printable';
-    }
-
-    public function register(Panel $panel): void
-    {
-        //
-    }
-
-    public function boot(Panel $panel): void
-    {
-        //
     }
 
     public static function make(): static
@@ -33,5 +23,15 @@ class FilamentPrintablePlugin implements Plugin
         $plugin = filament(app(static::class)->getId());
 
         return $plugin;
+    }
+
+    public function register(Panel $panel): void
+    {
+        //
+    }
+
+    public function boot(Panel $panel): void
+    {
+        //
     }
 }

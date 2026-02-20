@@ -1,6 +1,6 @@
 <?php
 
-namespace ArielMejiaDev\FilamentPrintable\Actions;
+namespace Statik\FilamentPrintable\Actions;
 
 use Filament\Actions\Action;
 
@@ -16,19 +16,10 @@ class PrintAction extends Action
         parent::setUp();
 
         $this
-            ->button()
-            ->color('primary')
-            ->outlined()
-            ->label('Print')
-            ->tooltip('Generate a printer-friendly version of this view. (Ctrl+P / Cmd+P)')
-            ->icon('heroicon-s-printer')
-            ->action(function ($livewire) {
-                $livewire->js('
-                    window.scrollTo(0, 0);
-                    setTimeout(() => {
-                        window.print();
-                    }, 100);
-                ');
-            })->keyBindings(['mod+p']);
+            ->label(__('filament-printable::filament-printable.actions.print.label'))
+            ->icon('heroicon-o-printer')
+            ->color('gray')
+            ->keyBindings(['mod+p'])
+            ->actionJs('window.scrollTo({top:0,left:0,behavior:"smooth"}); setTimeout(() => window.print(), 100)');
     }
 }
