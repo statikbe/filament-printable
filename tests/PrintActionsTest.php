@@ -1,28 +1,18 @@
 <?php
 
-it('can test print action', function () {
+use Statik\FilamentPrintable\Actions\PrintAction;
 
-    $action = \ArielMejiaDev\FilamentPrintable\Actions\PrintAction::make();
+it('can create a print action', function () {
+    $action = PrintAction::make();
 
-    $listRecord = new \Filament\Resources\Pages\ListRecords;
-
-    $result = call_user_func($action->getActionFunction(), $listRecord);
-
-    expect($action->getName() === 'print')->toBeTrue()
-        ->and($action->getLivewireClickHandler() === "mountAction('print')")->toBeTrue()
-        ->and($action->getActionFunction() instanceof Closure)->toBeTrue()
-        ->and($result === null)->toBeTrue();
+    expect($action->getName())->toBe('print')
+        ->and($action->getLabel())->toBe('Print')
+        ->and($action->getIcon())->toBe('heroicon-o-printer')
+        ->and($action->getColor())->toBe('gray');
 });
 
-it('can test print bulk action', function () {
+it('uses actionJs for window.print', function () {
+    $action = PrintAction::make();
 
-    $action = \ArielMejiaDev\FilamentPrintable\Actions\PrintBulkAction::make();
-
-    $listRecord = new \Filament\Resources\Pages\ListRecords;
-
-    $result = call_user_func($action->getActionFunction(), $listRecord);
-
-    expect($action->getName() === 'print')->toBeTrue()
-        ->and($action->getActionFunction() instanceof Closure)->toBeTrue()
-        ->and($result === null)->toBeTrue();
+    expect($action->getCustomAlpineClickHandler())->toContain('window.print()');
 });

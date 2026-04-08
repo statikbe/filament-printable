@@ -16,7 +16,7 @@
     backupStaticProperties="false"
 >
     <testsuites>
-        <testsuite name="ArielMejiaDev Test Suite">
+        <testsuite name="Filament Printable Test Suite">
             <directory>tests</directory>
         </testsuite>
     </testsuites>

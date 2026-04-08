@@ -5,7 +5,7 @@ namespace {{ namespace }};
 use {{ resource }};
 use Filament\Actions;
 use {{ baseResourcePage }};
-use ArielMejiaDev\FilamentPrintable\Actions\PrintAction;
+use Statik\FilamentPrintable\Actions\PrintAction;
 
 class {{ resourcePageClass }} extends {{ baseResourcePageClass }}
 {

@@ -5,10 +5,10 @@ namespace {{ namespace }};
 {{ clusterImport }}use {{ resource }}\Pages;
 use {{ resource }}\RelationManagers;
 use {{ model }};
-use ArielMejiaDev\FilamentPrintable\Actions\PrintBulkAction;
+use Filament\Actions\BulkActionGroup;
 use Filament\Forms;
-use Filament\Forms\Form;
 use Filament\Resources\Resource;
+use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
@@ -20,10 +20,10 @@ class {{ resourceClass }} extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';{{ clusterAssignment }}
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form
-            ->schema([
+        return $schema
+            ->components([
 {{ formSchema }}
             ]);
     }
@@ -41,9 +41,8 @@ class {{ resourceClass }} extends Resource
 {{ tableActions }}
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
+                BulkActionGroup::make([
 {{ tableBulkActions }}
-                    PrintBulkAction::make(),
                 ]),
             ]);
     }
