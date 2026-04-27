@@ -20,6 +20,6 @@ class PrintAction extends Action
             ->icon('heroicon-o-printer')
             ->color('gray')
             ->keyBindings(['mod+p'])
-            ->actionJs('window.scrollTo({top:0,left:0,behavior:"smooth"}); setTimeout(() => window.print(), 100)');
+            ->actionJs("window.scrollTo({top:0,left:0,behavior:'smooth'}); setTimeout(() => window.print(), 100)");
     }
 }

@@ -19,7 +19,7 @@ class FilamentPrintableServiceProvider extends PackageServiceProvider
     public function packageBooted(): void
     {
         FilamentAsset::register([
-            Css::make('filament-printable-styles', __DIR__.'/../resources/dist/filament-printable.css'),
+            Css::make('filament-printable-styles', __DIR__ . '/../resources/dist/filament-printable.css'),
         ], 'statikbe/filament-printable');
     }
 }

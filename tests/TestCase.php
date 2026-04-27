@@ -26,7 +26,7 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Statik\\FilamentPrintable\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'Statik\\FilamentPrintable\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
         );
     }
 
