@@ -2,6 +2,18 @@
 
 All notable changes to `filament-printable` will be documented in this file.
 
+## v1.0.0 - 2026-09-04
+
+### What's Changed
+
+* Filament 5 by @vanneszias in https://github.com/statikbe/filament-printable/pull/1
+
+### New Contributors
+
+* @vanneszias made their first contribution in https://github.com/statikbe/filament-printable/pull/1
+
+**Full Changelog**: https://github.com/statikbe/filament-printable/commits/v1.0.0
+
 ## 3.0.0 - 2025-05-29
 
 It adds a new CSS rules to work with tables and forms
